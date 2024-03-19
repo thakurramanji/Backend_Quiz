@@ -22,7 +22,6 @@ public class QuizService {
     @Autowired
     QuestionDao questionDao;
 
-
     public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
 
         List<Question> questions = questionDao.findRandomQuestionsByCategory(category, numQ);
@@ -31,7 +30,6 @@ public class QuizService {
         quiz.setTitle(title);
         quiz.setQuestions(questions);
         quizDao.save(quiz);
-
         return new ResponseEntity<>("Successss", HttpStatus.CREATED);
     }
 
