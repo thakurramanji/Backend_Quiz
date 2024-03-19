@@ -62,6 +62,7 @@ public class QuizService {
 
             i++;
         }
+        //to check how many questions are correct
         return new ResponseEntity<>(right, HttpStatus.OK);
     }
 }
